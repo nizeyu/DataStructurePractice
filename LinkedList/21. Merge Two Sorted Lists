@@ -28,6 +28,7 @@ public class Solution {
 		p = p.next;
 	}
 	
+	//l1 == null or l2 == null 接上另一个
 	if(l1 != null)p.next = l1;
 	if(l2 != null)p.next = l2;
 	
