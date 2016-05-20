@@ -16,7 +16,7 @@ public class Solution {
             fast = fast.next;
         }
         
-        if(fast == null){
+        if(fast == null){//n = length of list
             head = head.next;
             return head;
         }
