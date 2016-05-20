@@ -13,7 +13,7 @@ public class Solution
         if(head == null || head.next == null)
             return head;
         
-        ListNode dummyNode1 = new ListNode(0);
+        ListNode dummyNode1 = new ListNode(0);//m n p 三个指针同时指
         dummyNode1.next = head;
         ListNode m = dummyNode1;
         
