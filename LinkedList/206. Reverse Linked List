@@ -27,7 +27,7 @@ public class Solution
 			else
 				break;
 		}
-		head.next = null;
+		head.next = null;//head 变成了新list的尾，不要忘记指向null
 		
 		return p;
     }
