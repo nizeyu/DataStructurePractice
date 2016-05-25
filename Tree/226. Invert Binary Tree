@@ -1,4 +1,4 @@
-/**
+/**Method 1
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
@@ -22,5 +22,43 @@ public class Solution {
             invertTree(root.right);
         
         return root;
+    }
+}
+
+/**Method 2
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution
+{
+    public TreeNode invertTree(TreeNode root)
+    {
+        if(root == null)
+            return root;
+        
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        
+        while(!q.isEmpty())
+        {
+            TreeNode node = q.poll();
+            
+            TreeNode t = q.left;
+            q.left = q.right;
+            q.right = t;
+            
+            if(q.left != null)
+                q.offer(q.left);
+            if(q.right != null)
+                q.offer(q.right);
+        }
+        
+        return root
+        
     }
 }
