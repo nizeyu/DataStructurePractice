@@ -23,7 +23,7 @@ public class Solution {
             
             for(int i = 0; i < size; i++)
             {
-                TreeNode node = q.poll();
+                TreeNode node = q.poll();//pay attention
                 
                 if(i == 0)
                     result.add(node.val);
