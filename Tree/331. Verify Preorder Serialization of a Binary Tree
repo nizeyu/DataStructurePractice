@@ -1,3 +1,4 @@
+//Method #1
 public class Solution
 {
     public boolean isValidSerialization(String preorder)
@@ -26,5 +27,28 @@ public class Solution
                 stack.push(x);
         }
         return stack.size() == 1 && stack.peek().equals("#");
+    }
+}
+
+//Method #2
+public class Solution
+{
+    public boolean isValidSerialization(String preorder)
+    {
+        if(preorder == null && preorder.length() == 0)
+            return false;
+        
+        int difference = 1;
+        
+        for(String x: preorder.split(","))
+        {
+            if(--difference < 0)
+                return false;
+            
+            if(!x.equals("#"))
+                difference += 2;
+        }
+        
+        return difference == 0;
     }
 }
