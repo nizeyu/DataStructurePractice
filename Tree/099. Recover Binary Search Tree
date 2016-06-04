@@ -8,21 +8,21 @@
  * }
  */
 public class Solution {
-    TreeNode p;
-    TreeNode m;
-    TreeNode n;
+    TreeNode first;
+    TreeNode second;
+    TreeNode cur;
     public void recoverTree(TreeNode root) {
-        p = null;
-        m = null;
-        n = null;
+        first = null;
+        second = null;
+        cur = null;
         
         inorderTraversal(root);
         
-        if(m != null && n != null)
+        if(first != null && second != null)
         {
-            int t = m.val;
-            m.val = n.val;
-            n.val = t;
+            int t = first.val;
+            first.val = second.val;
+            second.val = t;
         }
     }
     
@@ -33,17 +33,17 @@ public class Solution {
         
         inorderTraversal(node.left);
         
-        if(p == null)
-            p = node;
+        if(cur == null)
+            cur = node;
         else
         {
-            if(p.val > node.val)
+            if(cur.val > node.val)
             {
-                if(m == null)
-                    m = p;
-                n = node;
+                if(first == null)
+                    first = cur;
+                second = node;
             }
-            p = node;
+            cur = node;
         }
         
         inorderTraversal(node.right);
