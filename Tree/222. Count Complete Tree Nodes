@@ -14,24 +14,25 @@ public class Solution
         if(root == null)
             return 0;
         
-        int l = getLeftHeight(root);//pay attention: not root.left
+        int l = getLeftHeight(root);////pay attention: not root.left
         int r = getRightHeight(root);
         
         if(l == r)
-            return (2 << (l - 1 )) - 1;
+            return (2 << (l - 1)) - 1;
         
-        return countNodes(root.left) + countNodes(root.right) + 1;
+        return countNodes(root.left) + countNodes(root.right) + 1;//recursive
     }
     
     private int getLeftHeight(TreeNode node)
     {
         int height = 0;
         
-        while(node != null)
+        while(node != null)//not if
         {
             node = node.left;
             height++;
         }
+        
         return height;
     }
     
@@ -44,6 +45,8 @@ public class Solution
             node = node.right;
             height++;
         }
+        
         return height;
     }
+    
 }
