@@ -1,2 +1,2 @@
-# DataStructurePractice
-Data Structure Practice
+# DataStructure&AlgorithmPractice
+Data Structure and Algorithm Practice
