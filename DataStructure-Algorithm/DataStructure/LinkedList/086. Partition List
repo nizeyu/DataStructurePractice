@@ -20,19 +20,16 @@ public class Solution
         ListNode dummyNode2 = new ListNode(0);
         ListNode n = dummyNode2;
         
-        ListNode p = head;
-        
-        while(p != null)
+        while(m.next != null)
         {
-            if(p.val < x)
+            if(m.next.val < x)
                 m = m.next;
             else
             {
-                n.next = p;
+                n.next = m.next;
                 m.next = m.next.next;
                 n = n.next;
             }
-            p = p.next;
         }
         
         m.next = dummyNode2.next;
