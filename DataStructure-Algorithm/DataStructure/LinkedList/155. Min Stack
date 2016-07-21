@@ -11,17 +11,17 @@ class Node
     }
 }
 
-
-public class MinStack {
-    
+public class MinStack
+{
     Node head;
-
     /** initialize your data structure here. */
-    public MinStack() {
+    public MinStack()
+    {
         head = null;
     }
     
-    public void push(int x) {
+    public void push(int x)
+    {
         if(head == null)
             head = new Node(x);
         else
@@ -29,25 +29,29 @@ public class MinStack {
             Node t = new Node(x);
             t.min = Math.min(x, head.min);
             t.next = head;
-            head = t;
+            head =t;
         }
     }
     
-    public void pop() {
+    public void pop()
+    {
         if(head != null)
             head = head.next;
         else
             throw new IllegalArgumentException("Empty Stack");
+        
     }
     
-    public int top() {
+    public int top()
+    {
         if(head != null)
             return head.val;
         else
             throw new IllegalArgumentException("Empty Stack");
     }
     
-    public int getMin() {
+    public int getMin()
+    {
         if(head != null)
             return head.min;
         else
@@ -62,4 +66,3 @@ public class MinStack {
  * obj.pop();
  * int param_3 = obj.top();
  * int param_4 = obj.getMin();
- */
