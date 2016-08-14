@@ -28,7 +28,7 @@ public class Solution
     {
         Queue<String> q = map.get(s);
         
-        while(q != null && !q.isEmpty())
+        while(q != null && !q.isEmpty())//注意顺序
             findItinerary(q.poll());
         
         result.add(0, s);
