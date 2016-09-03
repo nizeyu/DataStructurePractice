@@ -8,7 +8,7 @@ public class Solution
         for(int i = 0; i < 32; i++)
         {
             result += (n & 1) << (31 - i);
-            n >>>= 1;
+            n >>>= 1;//无符号右移
         }
         
         return result;
