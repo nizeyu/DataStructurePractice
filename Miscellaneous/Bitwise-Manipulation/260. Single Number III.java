@@ -16,7 +16,7 @@ public class Solution
         
         for(int x: nums)
         {
-            if((last1Bit & x) == 0)
+            if((last1Bit & x) != 0)
                 single1 ^= x;
             else
                 single2 ^= x;
